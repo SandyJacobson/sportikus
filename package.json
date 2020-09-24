@@ -1,0 +1,32 @@
+{
+  "name": "sportikus",
+  "version": "1.0.0",
+  "description": "Gear up for Glory.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandyJacobson/sportikus.git"
+  },
+  "keywords": [],
+  "author": "Sandy Jacobson <sandy.david.jacobson@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SandyJacobson/sportikus/issues"
+  },
+  "homepage": "https://github.com/SandyJacobson/sportikus#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.6",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
