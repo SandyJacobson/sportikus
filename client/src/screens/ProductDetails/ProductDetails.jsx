@@ -14,6 +14,7 @@ const ProductDetails = (props) => {
       const product = await getProduct(id);
       setProduct(product);
       setLoaded(true);
+      // CODE HERE
     };
     fetchProduct();
   }, [id]);
