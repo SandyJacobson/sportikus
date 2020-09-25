@@ -8,17 +8,17 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      {/* <Switch> */}
+      <Switch>
         <Route exact path="/">
           <Home />
         </Route>
         <Route path="/products">
           <Products />
         </Route>
-        <Route exact path="'/products/:id">
+        <Route exact path="/products/:id">
           <ProductDetails />
         </Route>
-      {/* </Switch> */}
+      </Switch>
     </div>
   );
 }

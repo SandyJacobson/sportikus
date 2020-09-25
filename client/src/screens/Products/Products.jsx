@@ -8,7 +8,7 @@ import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
 import Layout from "../../components/shared/Layout/Layout";
 import "./Products.css";
 
-const Products = () => {
+const Products = (props) => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
@@ -17,7 +17,6 @@ const Products = () => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
-      setQueriedProducts(products);
     };
     fetchProducts();
   }, []);
