@@ -53,7 +53,6 @@ const Products = () => {
     const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
     console.log(event.target.value)
     setAllProducts(newQueriedProducts)
-    // setQueriedProducts(newQueriedProducts)
   }
 
 
