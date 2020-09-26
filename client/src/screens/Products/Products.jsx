@@ -8,10 +8,11 @@ import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
 import Layout from "../../components/shared/Layout/Layout";
 import "./Products.css";
 
-const Products = (props) => {
+const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
+  const [reset, setReset] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -19,36 +20,48 @@ const Products = (props) => {
       setAllProducts(products);
     };
     fetchProducts();
-  }, []);
+  }, [reset]);
 
   const handleSort = type => {
     setSortType(type)
     switch (type) {
-      case "name-ascending":
-        setQueriedProducts(AZ(queriedProducts))
-        break
-      case "name-descending":
-        setQueriedProducts(ZA(queriedProducts))
-        break
       case "price-ascending":
-        setQueriedProducts(lowestFirst(queriedProducts))
+        setAllProducts(lowestFirst(allProducts))
         break
       case "price-descending":
-        setQueriedProducts(highestFirst(queriedProducts))
+        setAllProducts(highestFirst(allProducts))
+        break
+      case "name-ascending":
+        setAllProducts(AZ(allProducts))
+        break
+      case "name-descending":
+        setAllProducts(ZA(allProducts))
         break
       default:
         break
     }
   }
 
+  // useEffect(() => {
+  //   return handleSort(sortType)
+  // }, [queriedProducts, sortType])  
+
   const handleSearch = event => {
+    if (event.target.value === "") {
+      setReset(!reset)
+    }
     const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
-    setQueriedProducts(newQueriedProducts, () => handleSort(sortType))
+    console.log(event.target.value)
+    setAllProducts(newQueriedProducts)
+    // setQueriedProducts(newQueriedProducts)
   }
 
-  const handleSubmit = event => event.preventDefault()
 
-  const productsJSX = queriedProducts.map((product, index) =>
+  const handleSubmit = event => {
+    event.preventDefault()
+  }
+
+  const productsJSX = allProducts.map((product, index) =>
     <ProductCard
       _id={product._id}
       name={product.name}
@@ -58,28 +71,29 @@ const Products = (props) => {
     />
   )
 
-  const mappedProducts = allProducts.map((product, idx) => {
-    return (
-      <div key={idx} className="single-product">
-        <Link to={`/products/${product._id}`}>
-          <img src={product.imgURLOne} alt={product.name} />
-        </Link>
-        <ul key={idx}>
-          <li>{product.name}</li>
-          <li>{product.price}</li>
-        </ul>
-      </div>
-    );
-  });
+  // const mappedProducts = allProducts.map((product, idx) => {
+  //   return (
+  //     <div key={idx} className="single-product">
+  //       <Link to={`/products/${product._id}`}>
+  //         <img src={product.imgURLOne} alt={product.name} />
+  //       </Link>
+  //       <ul key={idx}>
+  //         <li>{product.name}</li>
+  //         <li>{product.price}</li>
+  //       </ul>
+  //     </div>
+  //   );
+  // });
 
   return (
     <Layout>
       <div className="multi-product-container">
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />
-        {mappedProducts}
+        {/* {mappedProducts} */}
       <div className="products">
-        {productsJSX}
+          {productsJSX}
+          {/* {queriedProducts} */}
       </div>
       </div>
     </Layout>
