@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getProduct } from "../../services/products";
 import Layout from "../../components/shared/Layout/Layout";
 import DeleteProduct from "../../components/DeleteProduct/DeleteProduct";
+import EditProduct from "../../components/EditProduct/EditProduct";
 import "./ProductDetails.css";
 
 const ProductDetails = (props) => {
@@ -38,7 +39,8 @@ const ProductDetails = (props) => {
           <li>{product.description}</li>
           <li>{product.detail}</li>
         </ul>
-        <button>Edit</button>
+        {/* <button>Edit</button> */}
+        <EditProduct product={product} />
         <DeleteProduct product={product}/>
       </div>
     </Layout>
