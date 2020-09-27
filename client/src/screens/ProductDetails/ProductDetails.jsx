@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProduct } from "../../services/products";
 import Layout from "../../components/shared/Layout/Layout";
+import DeleteProduct from "../../components/DeleteProduct/DeleteProduct";
 import "./ProductDetails.css";
 
 const ProductDetails = (props) => {
@@ -38,7 +39,7 @@ const ProductDetails = (props) => {
           <li>{product.detail}</li>
         </ul>
         <button>Edit</button>
-        <button>Delete</button>
+        <DeleteProduct product={product}/>
       </div>
     </Layout>
   );
