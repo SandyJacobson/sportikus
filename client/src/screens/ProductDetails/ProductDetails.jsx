@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../services/products";
+import { getProduct } from "../../services/products";
 import Layout from "../../components/shared/Layout/Layout";
 import "./ProductDetails.css";
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
   const [product, setProduct] = useState(null);
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const product = await getProducts(id);
+      const product = await getProduct(id);
       setProduct(product);
       setLoaded(true);
+      // CODE HERE
     };
     fetchProduct();
   }, [id]);
@@ -24,7 +25,7 @@ const ProductDetails = () => {
 
   return (
     <Layout>
-      <div className="proudct-details">
+      <div className="product-details">
         <div className="product-images">
           <img src={product.imgURLOne} alt={product.name} />
           <img src={product.imgURLTwo} alt={product.name} />

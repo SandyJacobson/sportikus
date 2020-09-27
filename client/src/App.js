@@ -12,7 +12,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/products">
+        <Route exact path="/products">
           <Products />
         </Route>
         <Route exact path="/products/:id">

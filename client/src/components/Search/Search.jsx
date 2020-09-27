@@ -1,11 +1,21 @@
-import React from 'react';
+import React from 'react'
+import './Search.css'
 
-const Search = () => {
-  return (
-    <div>
-      
-    </div>
-  );
-};
+const Search = (props) => {
+    return (
+        <form className="search-form" onSubmit={(e) => props.onSubmit(e)}>
+            <input
+                className="search-input"
+                value={props.value}
+                onChange={(e) => props.onChange(e)}
+                name="Search"
+                placeholder="Search"
+                type="text"
+                autoFocus
+        />
+        <button type="submit"><i className="fas fa-search"></i></button>
+        </form>
+    )
+}
 
-export default Search;
+export default Search

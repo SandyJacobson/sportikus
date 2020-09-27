@@ -1,10 +1,28 @@
-import React from 'react';
+import React from "react";
 
-const Sort = () => {
+const Sort = (props) => {
+  const handleChange = (event) => {
+    props.onChange(event.target.value);
+  };
+
   return (
-    <div>
-      
-    </div>
+    <form className="sort-container" onSubmit={props.handleSubmit}>
+      <select className="sort" onChange={handleChange}>
+        <option label="Filters:">Filters:</option>
+        <option value="price-ascending">
+          &nbsp; Price, low to high &nbsp;
+        </option>
+        <option value="price-descending">
+          &nbsp; Price, high to low &nbsp;
+        </option>
+        <option className="option" value="name-ascending">
+          &nbsp; Alphabetically, A-Z &nbsp;
+        </option>
+        <option value="name-descending">
+          &nbsp; Alphabetically, Z-A &nbsp;
+        </option>
+      </select>
+    </form>
   );
 };
 

@@ -1,10 +1,16 @@
 import React from 'react';
+import './Header.css';
 
 const Header = () => {
   return (
-    <div>
+    <header>
+      <h1 className="logo">
+        <img src="https://svgshare.com/i/Q0d.svg" alt="colliseum logo" />
+      </h1> 
       
-    </div>
+      <a href="#Products">Products</a>
+      <a href="#Admin">Admin</a>
+    </header>
   );
 };
 
