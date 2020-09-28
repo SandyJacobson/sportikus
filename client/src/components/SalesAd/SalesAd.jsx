@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./SalesAd.css";
 
 const SalesAd = () => {
@@ -19,6 +20,14 @@ const SalesAd = () => {
         alt="boxing bag"
         className="image"
       />
+
+      <div className="sales-div">
+        <h2 className="sales-title">LABOR DAY SALE</h2>
+        <p className="discount">30% off gym equipment</p>
+        <Link to="/products">
+          <button type="button" className="shop-sale">SHOP SALE</button>
+        </Link>
+      </div>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const breakPoints = [
 function CarouselComp() {
   return (
     <>
-      <div className="App">
+      <div className="carousel-images">
         <Carousel breakPoints={breakPoints}>
           <Item><img src="https://i.imgur.com/RLEQqiQ.jpg" alt="yoga girl" className="carousel-images" /></Item>
           <Item><img src="https://i.imgur.com/j59wbhK.jpg" alt="baseball player" className="carousel-images"/></Item>

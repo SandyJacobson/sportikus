@@ -7,7 +7,7 @@ import "./Home.css"
 const Home = () => {
   return (
     <div>
-      <h1>Sportikus</h1>
+      <h1 className="home-title">Sportikus</h1>
       <CarouselComp />
       <About />
       <SalesAd />
