@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
+
+.about-us-container {
+ max-width: 90%;
+ margin: 0 auto;
+}
+
+.about-us-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 72px;
+  color: #f6ca5c;
+  font-weight: 900;
+}
+
+.about-us-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
