@@ -45,9 +45,38 @@ const EditProduct = (props) => {
   }
 
   return (
-      <div className="post-edit">
+    <div className="product-edit">
+           <form onSubmit={handleSubmit}>
+           <label>ImgURLOne: </label>
+            <input
+              className="edit-imgURLOne"
+              placeholder='Image Link'
+              value={product.imgURLOne}
+              name='imgURLOne'
+              required
+              onChange={handleChange}
+        />
+        <label>ImgURL: </label>
+            <input
+              className="edit-imgURLTwo"
+              placeholder='Image Link'
+              value={product.imgURLTwo}
+              name='imgURLTwo'
+              required
+              onChange={handleChange}
+        />
+        <label>ImgURL: </label>
+            <input
+              className="edit-imgURLThree"
+              placeholder='Image Link'
+              value={product.imgURLThree}
+              name='imgURLThree'
+              required
+              onChange={handleChange}
+            />
+          </form>
       <form className="edit-form" onSubmit={handleSubmit}>
-        <label>Name:</label>
+        <label>Name: </label>
           <input
             className="input-name"
             placeholder='Name'
@@ -57,7 +86,7 @@ const EditProduct = (props) => {
             autoFocus
             onChange={handleChange}
           />
-          <label>Price:</label>
+          <label>Price: </label>
           <input
             className="input-price"
             placeholder='Price'
@@ -67,7 +96,7 @@ const EditProduct = (props) => {
             autoFocus
             onChange={handleChange}
           />
-          <label>Description:</label>
+          <label>Description: </label>
           <textarea
             className="textarea-description"
             rows={10}
@@ -78,7 +107,7 @@ const EditProduct = (props) => {
             required
             onChange={handleChange}
           />
-           <label>Detail:</label>
+           <label>Detail: </label>
           <textarea
             className="textarea-detail"
             rows={10}
@@ -90,7 +119,7 @@ const EditProduct = (props) => {
             onChange={handleChange}
           />
           <button type='submit' className="save-button">Save</button>
-        </form>
+      </form>
        </div>
   );
 };
