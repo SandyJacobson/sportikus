@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getProducts } from "../../services/products";
+// import { getProducts } from "../../services/products";
 import { Link } from "react-router-dom";
 // import Sort from '../../components/Sort/Sort';
 // import Search from '../../components/Search/Search';
@@ -7,19 +7,20 @@ import { Link } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import "./Products.css";
 
-const Products = () => {
-  const [allProducts, setAllProducts] = useState([]);
-  const [queriedProducts, setQueriedProducts] = useState(false);
-  const [sortType, setSortType] = useState([]);
-  const [reset, setReset] = useState(false);
+const Products = (props) => {
+  const { allProducts } = props;
+  // const [allProducts, setAllProducts] = useState([]);
+  // const [queriedProducts, setQueriedProducts] = useState(false);
+  // const [sortType, setSortType] = useState([]);
+  // const [reset, setReset] = useState(false);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const products = await getProducts();
-      setAllProducts(products);
-    };
-    fetchProducts();
-  }, [reset]);
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const products = await getProducts();
+  //     setAllProducts(products);
+  //   };
+  //   fetchProducts();
+  // }, [reset]);
 
   // const handleSort = type => {
   //   setSortType(type)
@@ -90,11 +91,10 @@ const Products = () => {
 
     );
   });
+
   return (
     <Layout>
       <div className="search-sort-products">
-        {/* <Search onSubmit={handleSubmit} onChange={handleSearch} />
-        <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
       </div>
       
       <div className="multi-product-container">

@@ -1,6 +1,7 @@
 /* Style the search field */
 .search-input {
   height: 34px;
+  width: 250px;
   border: 0px solid gray;
   border-radius: 0 14px 14px 0;
   -webkit-box-shadow: 4px -1px 3px 0px rgba(167,167,167,1);
