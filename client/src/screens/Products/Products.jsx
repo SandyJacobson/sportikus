@@ -40,14 +40,15 @@ const Products = () => {
       default:
         break
     }
-  }  
-
+  }
+  
   const handleSearch = event => {
     if (event.target.value === "") {
       setReset(!reset)
     }
     const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
     console.log(event.target.value)
+    // setAllProducts(newQueriedProducts)
     setQueriedProducts(newQueriedProducts)
   }
 
@@ -69,31 +70,38 @@ const Products = () => {
 
   const mappedProducts = products.map((product, idx) => {
     return (
-      <div key={idx} className="single-product">
-        <Link to={`/products/${product._id}`}>
-          <img src={product.imgURLOne} alt={product.name} />
-        </Link>
-        <ul key={idx}>
-          <li>{product.name}</li>
-          <li>{product.price}</li>
-        </ul>
+      <div className="container-separator-products">
+        <div className="container-products">
+          <div className="single-product">
+            <div key={idx}>
+              <Link to={`/products/${product._id}`}>
+                <img src={product.imgURLOne} alt={product.name} className="image-products" />
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="name-price-products">
+          <ul key={idx} className="ul-products">
+            <h5 className="font-products">{product.name}</h5>
+            <h5 className="font-products">${product.price}</h5>
+          </ul>
+        </div>
       </div>
+
+
     );
   });
-
   return (
     <Layout>
-      <div className="multi-product-container">
-      <Search onSubmit={handleSubmit} onChange={handleSearch} />
-      <Sort onSubmit={handleSubmit} onChange={handleSort} />
-        {mappedProducts}
-      <div className="products">
-          {/* {productsJSX} */}
-          {/* {queriedProducts} */}
+      <div className="search-sort-products">
+        <Search onSubmit={handleSubmit} onChange={handleSearch} />
+        <Sort onSubmit={handleSubmit} onChange={handleSort} />
       </div>
+
+      <div className="multi-product-container">
+        {mappedProducts}
       </div>
     </Layout>
   );
 };
-
 export default Products;
