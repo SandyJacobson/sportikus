@@ -14,24 +14,19 @@ const breakPoints = [
 function CarouselComp() {
   return (
     <>
-      <div className="App">
+      <div className="carousel-images">
         <Carousel breakPoints={breakPoints}>
           <Item><img src="https://i.imgur.com/RLEQqiQ.jpg" alt="yoga girl" className="carousel-images" /></Item>
-          <Item><img src="https://i.imgur.com/j59wbhK.jpg" alt="baseball player" className="carousel-images"/></Item>
-          <Item><img src="https://i.imgur.com/5kCje3A.jpg" alt="soccer player" className="carousel-images"/></Item>
-          <Item><img src="https://i.imgur.com/OXtrh1i.jpg" alt="golf player" className="carousel-images"/></Item>
-          <Item><img src="https://i.imgur.com/98jg0bu.jpg" alt="tennis player" className="carousel-images"/></Item>
+          <Item><img src="https://i.imgur.com/j59wbhK.jpg" alt="baseball player" className="carousel-images" /></Item>
+          <Item><img src="https://i.imgur.com/5kCje3A.jpg" alt="soccer player" className="carousel-images" /></Item>
+          <Item><img src="https://i.imgur.com/OXtrh1i.jpg" alt="golf player" className="carousel-images" /></Item>
+          <Item><img src="https://i.imgur.com/98jg0bu.jpg" alt="tennis player" className="carousel-images" /></Item>
         </Carousel>
       </div>
     </>
   );
 }
-
 export default CarouselComp;
-
-
-
-
 // import React, { Component } from 'react';
 // import Carousel from 'react-elastic-carousel';
 // import './CarouselComp.css';
