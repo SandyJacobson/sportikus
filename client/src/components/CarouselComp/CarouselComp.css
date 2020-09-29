@@ -1,0 +1,6 @@
+.carousel-images {
+  background-color: #2b2d40;
+  /* height: 400px; */
+  object-fit: cover;
+  margin: 20px 0;
+}
