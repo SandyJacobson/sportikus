@@ -1,14 +1,17 @@
-import React from 'react';
-import './Header.css';
+import React from "react";
+import { Link } from 'react-router-dom';
+import "./Header.css";
 
 const Header = () => {
   return (
     <header>
-      <h1 className="logo">
-        <img src="https://svgshare.com/i/Q0d.svg" alt="colliseum logo" />
-      </h1> 
-      
-      <a href="#Products">Products</a>
+      <Link to="/">
+        <h1 className="logo">
+          <img src="https://svgshare.com/i/Q0d.svg" alt="colliseum logo" />
+        </h1>
+      </Link>
+
+      <Link to="/products">Products</Link>
       <a href="#Admin">Admin</a>
     </header>
   );

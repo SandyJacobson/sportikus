@@ -10,7 +10,7 @@ import "./Products.css";
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
-  const [queriedProducts, setQueriedProducts] = useState([]);
+  const [queriedProducts, setQueriedProducts] = useState(false);
   const [sortType, setSortType] = useState([]);
   const [reset, setReset] = useState(false);
 
@@ -40,11 +40,7 @@ const Products = () => {
       default:
         break
     }
-  }
-
-  // useEffect(() => {
-  //   return handleSort(sortType)
-  // }, [queriedProducts, sortType])  
+  }  
 
   const handleSearch = event => {
     if (event.target.value === "") {
@@ -52,10 +48,8 @@ const Products = () => {
     }
     const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
     console.log(event.target.value)
-    setAllProducts(newQueriedProducts)
-    // setQueriedProducts(newQueriedProducts)
+    setQueriedProducts(newQueriedProducts)
   }
-
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -71,28 +65,30 @@ const Products = () => {
     />
   )
 
-  // const mappedProducts = allProducts.map((product, idx) => {
-  //   return (
-  //     <div key={idx} className="single-product">
-  //       <Link to={`/products/${product._id}`}>
-  //         <img src={product.imgURLOne} alt={product.name} />
-  //       </Link>
-  //       <ul key={idx}>
-  //         <li>{product.name}</li>
-  //         <li>{product.price}</li>
-  //       </ul>
-  //     </div>
-  //   );
-  // });
+  const products = queriedProducts ? queriedProducts : allProducts;
+
+  const mappedProducts = products.map((product, idx) => {
+    return (
+      <div key={idx} className="single-product">
+        <Link to={`/products/${product._id}`}>
+          <img src={product.imgURLOne} alt={product.name} />
+        </Link>
+        <ul key={idx}>
+          <li>{product.name}</li>
+          <li>{product.price}</li>
+        </ul>
+      </div>
+    );
+  });
 
   return (
     <Layout>
       <div className="multi-product-container">
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />
-        {/* {mappedProducts} */}
+        {mappedProducts}
       <div className="products">
-          {productsJSX}
+          {/* {productsJSX} */}
           {/* {queriedProducts} */}
       </div>
       </div>
