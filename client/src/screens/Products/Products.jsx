@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { getProducts } from "../../services/products";
 import { Link } from "react-router-dom";
-import ProductCard from '../../components/ProductCard/ProductCard';
-import Sort from '../../components/Sort/Sort';
-import Search from '../../components/Search/Search';
-import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
+// import Sort from '../../components/Sort/Sort';
+// import Search from '../../components/Search/Search';
+// import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
 import Layout from "../../components/shared/Layout/Layout";
 import "./Products.css";
 
@@ -22,53 +21,53 @@ const Products = () => {
     fetchProducts();
   }, [reset]);
 
-  const handleSort = type => {
-    setSortType(type)
-    switch (type) {
-      case "price-ascending":
-        setAllProducts(lowestFirst(allProducts))
-        break
-      case "price-descending":
-        setAllProducts(highestFirst(allProducts))
-        break
-      case "name-ascending":
-        setAllProducts(AZ(allProducts))
-        break
-      case "name-descending":
-        setAllProducts(ZA(allProducts))
-        break
-      default:
-        break
-    }
-  }
+  // const handleSort = type => {
+  //   setSortType(type)
+  //   switch (type) {
+  //     case "price-ascending":
+  //       setAllProducts(lowestFirst(allProducts))
+  //       break
+  //     case "price-descending":
+  //       setAllProducts(highestFirst(allProducts))
+  //       break
+  //     case "name-ascending":
+  //       setAllProducts(AZ(allProducts))
+  //       break
+  //     case "name-descending":
+  //       setAllProducts(ZA(allProducts))
+  //       break
+  //     default:
+  //       break
+  //   }
+  // }
   
-  const handleSearch = event => {
-    if (event.target.value === "") {
-      setReset(!reset)
-    }
-    const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
-    console.log(event.target.value)
-    // setAllProducts(newQueriedProducts)
-    setQueriedProducts(newQueriedProducts)
-  }
+  // const handleSearch = event => {
+  //   if (event.target.value === "") {
+  //     setReset(!reset)
+  //   }
+  //   const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
+  //   console.log(event.target.value)
+  //   // setAllProducts(newQueriedProducts)
+  //   setQueriedProducts(newQueriedProducts)
+  // }
 
-  const handleSubmit = event => {
-    event.preventDefault()
-  }
+  // const handleSubmit = event => {
+  //   event.preventDefault()
+  // }
 
-  const productsJSX = allProducts.map((product, index) =>
-    <ProductCard
-      _id={product._id}
-      name={product.name}
-      imgURL={product.imgURLOne}
-      price={product.price}
-      key={index}
-    />
-  )
+  // const productsJSX = allProducts.map((product, index) =>
+  //   <ProductCard
+  //     _id={product._id}
+  //     name={product.name}
+  //     imgURL={product.imgURLOne}
+  //     price={product.price}
+  //     key={index}
+  //   />
+  // )
 
-  const products = queriedProducts ? queriedProducts : allProducts;
+  // const products = queriedProducts ? queriedProducts : allProducts;
 
-  const mappedProducts = products.map((product, idx) => {
+  const mappedProducts = allProducts.map((product, idx) => {
     return (
       <div className="container-separator-products">
         <div className="container-products">
@@ -94,10 +93,10 @@ const Products = () => {
   return (
     <Layout>
       <div className="search-sort-products">
-        <Search onSubmit={handleSubmit} onChange={handleSearch} />
-        <Sort onSubmit={handleSubmit} onChange={handleSort} />
+        {/* <Search onSubmit={handleSubmit} onChange={handleSearch} />
+        <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
       </div>
-
+      
       <div className="multi-product-container">
         {mappedProducts}
       </div>

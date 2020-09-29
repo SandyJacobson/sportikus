@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getProduct } from "../../services/products";
 import Layout from "../../components/shared/Layout/Layout";
 import DeleteProduct from "../../components/DeleteProduct/DeleteProduct";
-import EditProduct from "../../components/EditProduct/EditProduct";
 import "./ProductDetails.css";
 
 const ProductDetails = (props) => {
@@ -16,7 +15,6 @@ const ProductDetails = (props) => {
       const product = await getProduct(id);
       setProduct(product);
       setLoaded(true);
-      // CODE HERE
     };
     fetchProduct();
   }, [id]);
@@ -39,8 +37,11 @@ const ProductDetails = (props) => {
           <li>{product.description}</li>
           <li>{product.detail}</li>
         </ul>
-        {/* <button>Edit</button> */}
-        <EditProduct product={product} />
+        <button className="edit-button">
+              <Link className="edit-link" to={`/products/${product._id}/edit`}>
+            Edit
+              </Link>
+          </button>
         <DeleteProduct product={product}/>
       </div>
     </Layout>
