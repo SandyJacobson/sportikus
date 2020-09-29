@@ -7,11 +7,13 @@ import Search from '../../components/Search/Search';
 import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
 import Layout from "../../components/shared/Layout/Layout";
 import "./Products.css";
+
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState(false);
   const [sortType, setSortType] = useState([]);
   const [reset, setReset] = useState(false);
+
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
@@ -19,6 +21,7 @@ const Products = () => {
     };
     fetchProducts();
   }, [reset]);
+
   const handleSort = type => {
     setSortType(type)
     switch (type) {
@@ -38,9 +41,7 @@ const Products = () => {
         break
     }
   }
-  // useEffect(() => {
-  //   return handleSort(sortType)
-  // }, [queriedProducts, sortType])  
+  
   const handleSearch = event => {
     if (event.target.value === "") {
       setReset(!reset)
@@ -50,9 +51,11 @@ const Products = () => {
     // setAllProducts(newQueriedProducts)
     setQueriedProducts(newQueriedProducts)
   }
+
   const handleSubmit = event => {
     event.preventDefault()
   }
+
   const productsJSX = allProducts.map((product, index) =>
     <ProductCard
       _id={product._id}
@@ -62,7 +65,9 @@ const Products = () => {
       key={index}
     />
   )
+
   const products = queriedProducts ? queriedProducts : allProducts;
+
   const mappedProducts = products.map((product, idx) => {
     return (
       <div className="container-separator-products">
