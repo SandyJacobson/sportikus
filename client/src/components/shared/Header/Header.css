@@ -40,6 +40,10 @@
   padding: .1em 1em;
 }
 
+.filter-search {
+  display: flex;
+}
+
 @media (min-width: 960px) {
 	.header .container {
 		justify-content: space-between;
