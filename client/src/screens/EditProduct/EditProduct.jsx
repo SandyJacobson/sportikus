@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Redirect } from 'react-router-dom'
 import { getProduct, updateProduct } from '../../services/products'
+import Layout from '../../components/shared/Layout/Layout'
 
 const EditProduct = (props) => {
   const [product, setProduct] = useState({
-    name: props.product.name,
-    price: props.product.price,
-    imgURLOne: props.product.imageURLOne,
-    imgURLTwo: props.product.imageURLTwo,
-    imgURLThree: props.product.imageURLThree,
-    description: props.product.description,
-    detail: props.product.detail,
+    name: "",
+    price: "",
+    imgURLOne: "",
+    imgURLTwo: "",
+    imgURLThree: "",
+    description: "",
+    detail: "",
   })
 
   const [isUpdated, setUpdated] = useState(false)
@@ -45,6 +46,7 @@ const EditProduct = (props) => {
   }
 
   return (
+    <Layout user={props.user}>
     <div className="product-edit">
            <form onSubmit={handleSubmit}>
            <label>ImgURLOne: </label>
@@ -56,7 +58,7 @@ const EditProduct = (props) => {
               required
               onChange={handleChange}
         />
-        <label>ImgURL: </label>
+        <label>ImgURLTwo: </label>
             <input
               className="edit-imgURLTwo"
               placeholder='Image Link'
@@ -65,7 +67,7 @@ const EditProduct = (props) => {
               required
               onChange={handleChange}
         />
-        <label>ImgURL: </label>
+        <label>ImgURLThree: </label>
             <input
               className="edit-imgURLThree"
               placeholder='Image Link'
@@ -120,7 +122,8 @@ const EditProduct = (props) => {
           />
           <button type='submit' className="save-button">Save</button>
       </form>
-       </div>
+      </div>
+      </Layout>
   );
 };
 
