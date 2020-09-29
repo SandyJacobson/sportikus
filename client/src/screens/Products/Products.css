@@ -1,0 +1,43 @@
+.container-separator-products{
+    padding: 0px 5px;
+    padding-bottom: 40px;
+}
+
+.container-products{
+    border-style: solid;
+    border-width: thin;
+    margin: 10px;
+}
+
+.image-products{
+    height: 180px;
+    width: 150px;
+}
+.single-product{
+
+    border-style: solid;
+    border-width: thin;
+    margin: 20px;
+}
+.multi-product-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.name-price-products{
+    border-style: solid;
+    border-width: thin;
+    margin: 0px 10px;
+}
+
+.font-products{
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.ul-products{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+}
