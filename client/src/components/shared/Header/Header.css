@@ -1,3 +1,10 @@
+header {
+  background-color: #eef2f4;
+  height: 130px;
+  width: 100%;
+  box-shadow: 5px 3px 5px #888888;
+}
+
 .logo {
   width: 120px;
 }
