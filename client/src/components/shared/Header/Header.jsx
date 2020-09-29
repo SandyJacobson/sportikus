@@ -1,4 +1,6 @@
 import React from "react";
+// import Sort from '../../components/Sort/Sort';
+// import Search from '../../components/Search/Search';
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -13,13 +15,16 @@ const Header = () => {
           </h1>
         </Link>
 
+        {/* <Search onSubmit={handleSubmit} onChange={handleSearch} />
+        <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
+        
         <nav className="nav-links">
           <ul>
             <li>
               <Link to="/products">Products</Link>
             </li>
             <li>
-              <a href="#Admin">Admin</a>
+              <Link to="/products">Products</Link>
             </li>
           </ul>
         </nav>
