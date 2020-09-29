@@ -36,14 +36,12 @@ const EditProduct = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let { id } = props.match.params
-    console.log(id)
     const updated = await updateProduct(id, product)
     setUpdated(updated)
   }
 
   if (isUpdated) {
-    return <Redirect to={`/products/${props.match.params.id}`} />
+    return <Redirect to={`/products/${id}`} />
   }
 
   return (
