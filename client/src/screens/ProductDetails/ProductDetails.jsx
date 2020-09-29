@@ -15,7 +15,6 @@ const ProductDetails = (props) => {
       const product = await getProduct(id);
       setProduct(product);
       setLoaded(true);
-      // CODE HERE
     };
     fetchProduct();
   }, [id]);
@@ -38,7 +37,6 @@ const ProductDetails = (props) => {
           <li>{product.description}</li>
           <li>{product.detail}</li>
         </ul>
-        {/* <EditProduct product={product} /> */}
         <button className="edit-button">
               <Link className="edit-link" to={`/products/${product._id}/edit`}>
             Edit

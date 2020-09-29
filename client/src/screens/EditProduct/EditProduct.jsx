@@ -37,6 +37,7 @@ const EditProduct = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let { id } = props.match.params
+    console.log(id)
     const updated = await updateProduct(id, product)
     setUpdated(updated)
   }
