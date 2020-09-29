@@ -1,4 +1,5 @@
 import React from "react";
+import './Sort.css';
 
 const Sort = (props) => {
   const handleChange = (event) => {
@@ -8,7 +9,7 @@ const Sort = (props) => {
   return (
     <form className="sort-container" onSubmit={props.handleSubmit}>
       <select className="sort" onChange={handleChange}>
-        <option label="Filters:">Filters:</option>
+        <option className="label" label="Filters:">Filters:</option>
         <option value="price-ascending">
           &nbsp; Price, low to high &nbsp;
         </option>
