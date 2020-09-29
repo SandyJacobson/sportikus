@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../../components/shared/Layout/Layout";
 import { Redirect } from "react-router-dom";
 import { createProduct } from "../../services/products";
+import './Admin.css'
 
 const Admin = () => {
   const [product, setProduct] = useState({
@@ -37,7 +38,7 @@ const Admin = () => {
   return (
       <Layout>
       <div className="product-edit">
-           <form onSubmit={handleSubmit}>
+           <form className='images-form' onSubmit={handleSubmit}>
            <label>ImgURLOne: </label>
             <input
               className="edit-imgURLOne"
@@ -109,7 +110,7 @@ const Admin = () => {
             required
             onChange={handleChange}
           />
-          <button type='submit' className="save-button">Save</button>
+          <button type='submit' className="save-button">Submit</button>
       </form>
       </div>
       </Layout>
