@@ -8,7 +8,7 @@ const Products = (props) => {
 
   const mappedProducts = products.map((product, idx) => {
     return (
-      <div className="container-separator-products">
+      <div key={idx} className="container-separator-products">
         <div className="container-products">
           <div className="single-product">
             <div key={idx}>

@@ -26,15 +26,15 @@ const ProductDetails = (props) => {
   return (
     <div className="product-details">
       <div className="product-images">
-        <img src={product.imgURLOne} alt={product.name} />
-        <img src={product.imgURLTwo} alt={product.name} />
-        <img src={product.imgURLThree} alt={product.name} />
+        <img src={product.imgURLOne} alt={product.name} style={{height: "200px", width: "200px"}} />
+        <img src={product.imgURLTwo} alt={product.name}  style={{height: "200px", width: "200px"}} />
+        <img src={product.imgURLThree} alt={product.name} style={{height: "200px", width: "200px"}} />
       </div>
       <ul>
-        <li>{product.name}</li>
-        <li>{product.price}</li>
-        <li>{product.description}</li>
-        <li>{product.detail}</li>
+        <li className="list list-name">{product.name}</li>
+        <li className="list list-price">${product.price}</li>
+        <li className="list">{product.description}</li>
+        <li className="list">{product.detail}</li>
       </ul>
       <button className="edit-button">
         <Link className="edit-link" to={`/products/${product._id}/edit`}>

@@ -1,0 +1,33 @@
+
+
+.product-images {
+  /* width: 100px;
+  height: 100px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  float: left;
+}
+
+/* .product-details {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+} */
+
+.list {
+  list-style-type: none;
+  font-family: Roboto;
+  width: 55%;
+  float: right;
+  padding: 10px;
+}
+
+.list-name {
+  font-size: 35px;
+  font-weight: 670;
+}
+
+.list-price {
+  font-size: 25px;
+}
