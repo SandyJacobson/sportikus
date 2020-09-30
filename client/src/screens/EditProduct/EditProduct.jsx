@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Layout from "../../components/shared/Layout/Layout";
-import { Redirect } from "react-router-dom";
-import { createProduct } from "../../services/products";
+import React, { useState, useEffect } from 'react'
+import { useParams, Redirect } from 'react-router-dom'
+import { getProduct, updateProduct } from '../../services/products'
+import Layout from '../../components/shared/Layout/Layout'
 
-const Admin = () => {
+const EditProduct = (props) => {
   const [product, setProduct] = useState({
     name: "",
     price: "",
@@ -14,7 +14,17 @@ const Admin = () => {
     detail: "",
   })
 
-  const [isCreated, setCreated] = useState(false)
+  const [isUpdated, setUpdated] = useState(false)
+  let { id } = useParams()
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const product = await getProduct(id)
+      setProduct(product)
+    }
+    fetchProduct()
+  }, [id])
+
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -26,17 +36,17 @@ const Admin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const created = await createProduct(product)
-    setCreated({ created })
+    const updated = await updateProduct(id, product)
+    setUpdated(updated)
   }
 
-  if (isCreated) {
-    return <Redirect to={`/`} />
+  if (isUpdated) {
+    return <Redirect to={`/products/${id}`} />
   }
 
   return (
-      <Layout>
-      <div className="product-edit">
+    <Layout user={props.user}>
+    <div className="product-edit">
            <form onSubmit={handleSubmit}>
            <label>ImgURLOne: </label>
             <input
@@ -116,4 +126,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default EditProduct;
