@@ -1,6 +1,13 @@
+/* #page-container {
+   position: relative; 
+} */
+
 .footer {
   text-align: center;
   display: inline;
   color: rgba(33, 120, 250);
   font-size: 12px;
+  bottom: 0;
+  margin-left: 550px;
+  
 }
