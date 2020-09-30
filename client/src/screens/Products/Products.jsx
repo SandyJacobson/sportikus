@@ -1,73 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { getProducts } from "../../services/products";
+import React from "react";
 import { Link } from "react-router-dom";
-// import Sort from '../../components/Sort/Sort';
-// import Search from '../../components/Search/Search';
-// import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
-import Layout from "../../components/shared/Layout/Layout";
 import "./Products.css";
 
-const Products = () => {
-  const [allProducts, setAllProducts] = useState([]);
-  const [queriedProducts, setQueriedProducts] = useState(false);
-  const [sortType, setSortType] = useState([]);
-  const [reset, setReset] = useState(false);
+const Products = (props) => {
+  const { allProducts, queriedProducts } = props;
+  const products = queriedProducts ? queriedProducts : allProducts;
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const products = await getProducts();
-      setAllProducts(products);
-    };
-    fetchProducts();
-  }, [reset]);
-
-  // const handleSort = type => {
-  //   setSortType(type)
-  //   switch (type) {
-  //     case "price-ascending":
-  //       setAllProducts(lowestFirst(allProducts))
-  //       break
-  //     case "price-descending":
-  //       setAllProducts(highestFirst(allProducts))
-  //       break
-  //     case "name-ascending":
-  //       setAllProducts(AZ(allProducts))
-  //       break
-  //     case "name-descending":
-  //       setAllProducts(ZA(allProducts))
-  //       break
-  //     default:
-  //       break
-  //   }
-  // }
-  
-  // const handleSearch = event => {
-  //   if (event.target.value === "") {
-  //     setReset(!reset)
-  //   }
-  //   const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
-  //   console.log(event.target.value)
-  //   // setAllProducts(newQueriedProducts)
-  //   setQueriedProducts(newQueriedProducts)
-  // }
-
-  // const handleSubmit = event => {
-  //   event.preventDefault()
-  // }
-
-  // const productsJSX = allProducts.map((product, index) =>
-  //   <ProductCard
-  //     _id={product._id}
-  //     name={product.name}
-  //     imgURL={product.imgURLOne}
-  //     price={product.price}
-  //     key={index}
-  //   />
-  // )
-
-  // const products = queriedProducts ? queriedProducts : allProducts;
-
-  const mappedProducts = allProducts.map((product, idx) => {
+  const mappedProducts = products.map((product, idx) => {
     return (
       <div className="container-separator-products">
         <div className="container-products">
@@ -86,21 +25,13 @@ const Products = () => {
           </ul>
         </div>
       </div>
-
-
     );
   });
+
   return (
-    <Layout>
-      <div className="search-sort-products">
-        {/* <Search onSubmit={handleSubmit} onChange={handleSearch} />
-        <Sort onSubmit={handleSubmit} onChange={handleSort} /> */}
-      </div>
-      
       <div className="multi-product-container">
         {mappedProducts}
       </div>
-    </Layout>
   );
 };
 export default Products;

@@ -7,7 +7,7 @@ const Sort = (props) => {
   };
 
   return (
-    <form className="sort-container" onSubmit={props.handleSubmit}>
+    <form className="sort-container">
       <select className="sort" onChange={handleChange}>
         <option className="filters" label="Filters:">Filters:</option>
         <option value="price-ascending">

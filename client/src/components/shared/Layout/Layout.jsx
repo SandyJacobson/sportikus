@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer'
 const Layout = (props) => {
   return (
     <div>
-      <Header />
+      <Header search={props.search} onChange={props.onChange}/>
       {props.children}
       <Footer />
     </div>
