@@ -7,6 +7,7 @@ import ProductDetails from "./screens/ProductDetails/ProductDetails";
 import Admin from "./screens/Admin/Admin";
 import EditProduct from "./screens/EditProduct/EditProduct";
 import { AZ, ZA, lowestFirst, highestFirst } from "./utils/sort";
+import Layout from "./components/shared/Layout/Layout";
 import "./App.css";
 
 function App() {
@@ -51,59 +52,36 @@ function App() {
       product.name.toLowerCase().includes(event.target.value.toLowerCase())
     );
     console.log(event.target.value);
-    // setAllProducts(newQueriedProducts)
     setQueriedProducts(newQueriedProducts);
   };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
-  // const products = queriedProducts ? queriedProducts : allProducts;
-
-  // const mappedProducts = products.map((product, idx) => {
-  //   return (
-  //     <div className="container-separator-products">
-  //       <div className="container-products">
-  //         <div className="single-product">
-  //           <div key={idx}>
-  //             <Link to={`/products/${product._id}`}>
-  //               <img
-  //                 src={product.imgURLOne}
-  //                 alt={product.name}
-  //                 className="image-products"
-  //               />
-  //             </Link>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="name-price-products">
-  //         <ul key={idx} className="ul-products">
-  //           <h5 className="font-products">{product.name}</h5>
-  //           <h5 className="font-products">${product.price}</h5>
-  //         </ul>
-  //       </div>
-  //     </div>
-  //   );
-  // });
 
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Layout onChange={handleSort} search={handleSearch}>
+            <Home />
+          </Layout>
         </Route>
         <Route exact path="/products">
-          <Products allProducts={allProducts}/>
+          <Layout onChange={handleSort} search={handleSearch}>
+            <Products allProducts={allProducts} queriedProducts={queriedProducts}/>
+          </Layout>
         </Route>
         <Route exact path="/products/:id">
-          <ProductDetails />
+          <Layout onChange={handleSort} search={handleSearch}>
+            <ProductDetails />
+          </Layout>
         </Route>
         <Route exact path="/products/:id/edit">
-          <EditProduct />
+          <Layout onChange={handleSort} search={handleSearch}>
+            <EditProduct />
+          </Layout>
         </Route>
         <Route exact path="/admin">
-          <Admin />
+          <Layout onChange={handleSort} search={handleSearch}>
+            <Admin />
+          </Layout>
         </Route>
       </Switch>
     </div>
