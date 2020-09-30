@@ -1,0 +1,13 @@
+
+
+.product-images {
+  width: 150px;
+  height: 150px;
+  /* flex-direction: row;
+  justify-content: flex-start; */
+}
+
+.product-details {
+display: flex;
+flex-wrap: wrap;
+}
