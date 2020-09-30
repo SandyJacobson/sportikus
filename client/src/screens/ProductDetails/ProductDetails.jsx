@@ -24,27 +24,25 @@ const ProductDetails = (props) => {
   }
 
   return (
-    <Layout>
-      <div className="product-details">
-        <div className="product-images">
-          <img src={product.imgURLOne} alt={product.name} />
-          <img src={product.imgURLTwo} alt={product.name} />
-          <img src={product.imgURLThree} alt={product.name} />
-        </div>
-        <ul>
-          <li>{product.name}</li>
-          <li>{product.price}</li>
-          <li>{product.description}</li>
-          <li>{product.detail}</li>
-        </ul>
-        <button className="edit-button">
-              <Link className="edit-link" to={`/products/${product._id}/edit`}>
-            Edit
-              </Link>
-          </button>
-        <DeleteProduct product={product}/>
+    <div className="product-details">
+      <div className="product-images">
+        <img src={product.imgURLOne} alt={product.name} />
+        <img src={product.imgURLTwo} alt={product.name} />
+        <img src={product.imgURLThree} alt={product.name} />
       </div>
-    </Layout>
+      <ul>
+        <li>{product.name}</li>
+        <li>{product.price}</li>
+        <li>{product.description}</li>
+        <li>{product.detail}</li>
+      </ul>
+      <button className="edit-button">
+        <Link className="edit-link" to={`/products/${product._id}/edit`}>
+          Edit
+              </Link>
+      </button>
+      <DeleteProduct product={product} />
+    </div>
   );
 };
 
