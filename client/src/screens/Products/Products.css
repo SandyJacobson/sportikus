@@ -5,13 +5,15 @@
 
 .container-products{
   border-style: solid;
+  border-color: gray;
   border-width: thin;
   margin: 10px;
 }
 
 .image-products{
-  height: 180px;
+  height: 150px;
   width: 150px;
+  object-fit: cover;
 }
 .single-product{
 
@@ -37,7 +39,7 @@
 
 .font-products{
   font-size: 8px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .ul-products{
