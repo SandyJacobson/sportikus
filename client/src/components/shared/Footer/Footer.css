@@ -3,4 +3,7 @@
   display: inline;
   color: rgba(33, 120, 250);
   font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

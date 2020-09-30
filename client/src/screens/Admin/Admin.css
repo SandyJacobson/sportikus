@@ -1,3 +1,82 @@
-.product-edit{
-  padding-top: 30px;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.title-edit-container {
+  margin: 0 auto;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.label {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  text-align: left;
+}
+
+.edit-container {
+  display: flex;
+  justify-content: center;
+  /* max-width: 90%; */
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.image-form,
+.info-form {
+  margin: 20px;
+}
+
+.imgURLOne,
+.imgURLTwo,
+.imgURLThree,
+.input-name,
+.input-price,
+.textarea-description,
+.textarea-detail {
+  background-color: #eef2f4;
+  border: 1px solid #a9a9a9;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 7px;
+  width: 355px;
+}
+
+.save-button {
+  display: block;
+  font-weight: 700;
+  background-color: #f6ca5c;
+  border: 0px;
+  margin-top: 20px;
+  padding: 8px 40px;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 760px) {
+  .title {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    margin-top: 100px;
+  }
+
+  .edit-container {
+    display: block;
+  }
+
+  .imgURLOne,
+  .imgURLTwo,
+  .imgURLThree,
+  .input-name,
+  .input-price,
+  .textarea-description,
+  .textarea-detail {
+    width: 100%;
+  }
+
+  .save-button {
+    margin-left: 120px;
+  }
 }

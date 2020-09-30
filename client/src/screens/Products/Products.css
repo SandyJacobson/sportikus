@@ -17,17 +17,21 @@
 
   border-style: solid;
   border-width: thin;
+  border-color: gray;
   margin: 20px;
 }
 .multi-product-container{
   display: flex;
   flex-wrap: wrap;
-  
+  padding: 100px 0 50px 50px;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .name-price-products{
   border-style: solid;
   border-width: thin;
+  border-color: gray;
   margin: 0px 10px;
 }
 
