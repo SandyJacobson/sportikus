@@ -35,8 +35,8 @@ const Admin = () => {
   }
 
   return (
-    <div className="product-edit">
-      <form onSubmit={handleSubmit}>
+    <div className="product-edit" style={{ width: "800px" }} style={{ padding: "30px" }}> 
+      <form onSubmit={handleSubmit} style={{ width: "300px", float: "left" }}>
         <label>ImgURLOne: </label>
         <input
           className="edit-imgURLOne"
@@ -45,7 +45,7 @@ const Admin = () => {
           name='imgURLOne'
           required
           onChange={handleChange}
-        />
+        /><br />
         <label>ImgURLTwo: </label>
         <input
           className="edit-imgURLTwo"
@@ -54,7 +54,7 @@ const Admin = () => {
           name='imgURLTwo'
           required
           onChange={handleChange}
-        />
+        /><br />
         <label>ImgURLThree: </label>
         <input
           className="edit-imgURLThree"
@@ -63,10 +63,10 @@ const Admin = () => {
           name='imgURLThree'
           required
           onChange={handleChange}
-        />
+        /><br />
       </form>
-      <form className="edit-form" onSubmit={handleSubmit}>
-        <label>Name: </label>
+      <form className="edit-form" onSubmit={handleSubmit} style={{ width: "300px", float: "right" }}>
+        <label>Name: </label><br />
         <input
           className="input-name"
           placeholder='Name'
@@ -75,8 +75,8 @@ const Admin = () => {
           required
           autoFocus
           onChange={handleChange}
-        />
-        <label>Price: </label>
+        /><br />
+        <label>Price: </label><br />
         <input
           className="input-price"
           placeholder='Price'
@@ -85,23 +85,23 @@ const Admin = () => {
           required
           autoFocus
           onChange={handleChange}
-        />
-        <label>Description: </label>
+        /><br />
+        <label>Description: </label><br />
         <textarea
           className="textarea-description"
           rows={10}
-          cols={78}
+          cols={50}
           placeholder='Description'
           value={product.description}
           name='description'
           required
           onChange={handleChange}
-        />
-        <label>Detail: </label>
+        /><br />
+        <label>Detail: </label><br />
         <textarea
           className="textarea-detail"
           rows={10}
-          cols={78}
+          cols={50}
           placeholder='Detail'
           value={product.detail}
           name='detail'
