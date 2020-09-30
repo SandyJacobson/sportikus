@@ -9,7 +9,7 @@ const Search = (props) => {
                 value={props.value}
                 onChange={(e) => props.search(e)}
                 name="Search"
-                placeholder="&nbsp;&nbsp;&nbsp;Search"
+                placeholder="Search"
                 type="text"
                 autoFocus
         />

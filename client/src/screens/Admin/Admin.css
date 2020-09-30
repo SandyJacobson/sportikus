@@ -4,6 +4,14 @@
   margin: 0 auto;
 }
 
+.edit-container {
+  display: flex;
+  justify-content: center;
+  /* max-width: 90%; */
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
 .title {
   font-family: "Roboto", sans-serif;
   font-size: 30px;
@@ -15,14 +23,6 @@
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   text-align: left;
-}
-
-.edit-container {
-  display: flex;
-  justify-content: center;
-  /* max-width: 90%; */
-  padding: 0 30px;
-  margin: 0 auto;
 }
 
 .image-form,

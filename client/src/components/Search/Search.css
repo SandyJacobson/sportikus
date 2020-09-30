@@ -4,9 +4,9 @@
   width: 250px;
   border: 0px solid gray;
   border-radius: 0 14px 14px 0;
-  -webkit-box-shadow: 2px 0px 3px 0px rgba(167,167,167,1);
-  -moz-box-shadow: 2px 0px 3px 0px rgba(167,167,167,1);
-  box-shadow: 2px 0px 3px 0px rgba(167,167,167,1);
+  -webkit-box-shadow: 2px 0px 3px 0px rgba(190, 190, 190);
+  -moz-box-shadow: 2px 0px 3px 0px rgba(190, 190, 190);
+  box-shadow: 2px 0px 3px 0px rgb(190, 190, 190);
   outline: none;
   margin-left: 4px;
 }
