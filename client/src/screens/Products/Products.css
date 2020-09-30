@@ -25,7 +25,7 @@
 .multi-product-container{
   display: flex;
   flex-wrap: wrap;
-  padding: 100px 0px 50px 50px;
+  padding: 100px 0 50px 50px;
   margin: 0 auto;
   max-width: 1200px;
 }

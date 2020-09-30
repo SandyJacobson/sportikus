@@ -1,5 +1,22 @@
-
 * {
-  /* margin: 0 auto; */
-  /* max-width: 100%; */
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+.App {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; 
 }
