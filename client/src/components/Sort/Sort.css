@@ -5,9 +5,9 @@
   background: #ffffff;
   border: 0px solid rgba(167,167,167,1);
   border-radius: 14px 0px 0px 14px;
-  -webkit-box-shadow: 2px 0px 3px 0px rgba(167,167,167,1);
-  -moz-box-shadow: 2px 0px 3px 0px rgba(167,167,167,1);
-  box-shadow: 2px 0px 3px 0px rgba(167,167,167,1);
+  -webkit-box-shadow: 2px 0px 3px 0px rgba(190, 190, 190);
+  -moz-box-shadow: 2px 0px 3px 0px rgba(190, 190, 190);
+  box-shadow: 2px 0px 3px 0px rgb(190, 190, 190);
 }
 
 .filter-search {

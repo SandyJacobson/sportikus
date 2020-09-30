@@ -1,0 +1,22 @@
+.images-container {
+  margin: 20px;
+  max-width: 300px;
+}
+
+.big-image {
+  width: 270px;
+  border: 1px solid gray;
+  margin: 2px;
+}
+
+.little-image-container {
+  width: 285px;
+  margin: 2px;
+}
+
+.little-image {
+  width: 80px;
+  border: 1px solid gray;
+  margin: 15px;
+  margin-left: 0;
+}
