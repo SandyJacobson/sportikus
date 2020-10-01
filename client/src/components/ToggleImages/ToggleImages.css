@@ -1,30 +1,48 @@
 .images-container {
-  margin: 20px;
+  margin: 28px 0px;
   max-width: 300px;
 }
 
 .big-image {
-  width: 270px;
+  min-width: 270px;
+  max-width: 270px;
+  min-height: 270px;
+  max-height: 270px;
   border: 1px solid gray;
   margin: 2px;
+  object-fit: contain;
 }
 
 .little-image-container {
-  width: 285px;
+  /* width: 285px; */
+  max-width: 270px;
   margin: 2px;
   display: flex;
+  justify-content: space-between;
 }
 
 .little-image {
-  width: 80px;
+  width: 100%;
+  min-width: 75px;
+  min-height: 75px;
+  max-width: 75px;
+  max-height: 75px;
   border: 1px solid gray;
-  margin: 15px;
+  object-fit: contain;
   margin-left: 0;
 }
+
+.big-image-container{
+  /* background-color: red; */
+
+}
+
 
 .little-image-one,
 .little-image-two,
 .little-image-three {
   object-fit: cover;
+  max-width: 132px;
+  max-height: 95px;
 
 }

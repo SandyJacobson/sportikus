@@ -65,7 +65,7 @@ function App() {
         </Route>
         <Route exact path="/products">
           <Layout onChange={handleSort} search={handleSearch}>
-            <Products allProducts={allProducts} queriedProducts={queriedProducts}/>
+            <Products allProducts={allProducts} queriedProducts={queriedProducts} />
           </Layout>
         </Route>
         <Route exact path="/products/:id">
