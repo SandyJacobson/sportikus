@@ -12,6 +12,7 @@
 .little-image-container {
   width: 285px;
   margin: 2px;
+  display: flex;
 }
 
 .little-image {
@@ -19,4 +20,11 @@
   border: 1px solid gray;
   margin: 15px;
   margin-left: 0;
+}
+
+.little-image-one,
+.little-image-two,
+.little-image-three {
+  object-fit: cover;
+
 }
