@@ -31,9 +31,6 @@
 }
 
 .name-price-products{
-  border-style: solid;
-  border-width: thin;
-  border-color: gray;
   margin: 0px 10px;
 }
 
@@ -44,6 +41,6 @@
 
 .ul-products{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0px;
 }

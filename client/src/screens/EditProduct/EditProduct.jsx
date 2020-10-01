@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, Redirect } from 'react-router-dom'
-import { getProduct, updateProduct } from '../../services/products'
-import Layout from '../../components/shared/Layout/Layout'
+import React, { useState, useEffect } from "react";
+import { useParams, Redirect } from "react-router-dom";
+import { getProduct, updateProduct } from "../../services/products";
+import "./EditProduct.css";
 
 const EditProduct = (props) => {
   const [product, setProduct] = useState({
@@ -12,117 +12,126 @@ const EditProduct = (props) => {
     imgURLThree: "",
     description: "",
     detail: "",
-  })
+  });
 
-  const [isUpdated, setUpdated] = useState(false)
-  let { id } = useParams()
+  const [isUpdated, setUpdated] = useState(false);
+  let { id } = useParams();
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const product = await getProduct(id)
-      setProduct(product)
-    }
-    fetchProduct()
-  }, [id])
-
+      const product = await getProduct(id);
+      setProduct(product);
+    };
+    fetchProduct();
+  }, [id]);
 
   const handleChange = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     setProduct({
       ...product,
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    const updated = await updateProduct(id, product)
-    setUpdated(updated)
-  }
+    event.preventDefault();
+    const updated = await updateProduct(id, product);
+    setUpdated(updated);
+  };
 
   if (isUpdated) {
-    return <Redirect to={`/products/${id}`} />
+    return <Redirect to={`/products/${id}`} />;
   }
 
   return (
-    <Layout user={props.user}>
     <div className="product-edit">
-           <form onSubmit={handleSubmit}>
-           <label>ImgURLOne: </label>
-            <input
-              className="edit-imgURLOne"
-              placeholder='Image Link'
-              value={product.imgURLOne}
-              name='imgURLOne'
-              required
-              onChange={handleChange}
-        />
-        <label>ImgURLTwo: </label>
-            <input
-              className="edit-imgURLTwo"
-              placeholder='Image Link'
-              value={product.imgURLTwo}
-              name='imgURLTwo'
-              required
-              onChange={handleChange}
-        />
-        <label>ImgURLThree: </label>
-            <input
-              className="edit-imgURLThree"
-              placeholder='Image Link'
-              value={product.imgURLThree}
-              name='imgURLThree'
-              required
-              onChange={handleChange}
-            />
-          </form>
-      <form className="edit-form" onSubmit={handleSubmit}>
-        <label>Name: </label>
+      <div className="image-div-edit">
+        <form className='image-form' onSubmit={handleSubmit}>
+          <label>ImgURLOne: </label> <br />
           <input
-            className="input-name"
-            placeholder='Name'
-            value={product.name}
-            name='name'
+            className="edit-imgURLOne"
+            placeholder="Image Link"
+            value={product.imgURLOne}
+            name="imgURLOne"
             required
-            autoFocus
             onChange={handleChange}
-          />
-          <label>Price: </label>
+          />{" "}
+          <br />
+          <label>ImgURLTwo: </label> <br />
           <input
-            className="input-price"
-            placeholder='Price'
-            value={product.price}
-            name='price'
-            required
-            autoFocus
-            onChange={handleChange}
-          />
-          <label>Description: </label>
-          <textarea
-            className="textarea-description"
-            rows={10}
-            cols={78}
-            placeholder='Description'
-            value={product.description}
-            name='description'
+            className="edit-imgURLTwo"
+            placeholder="Image Link"
+            value={product.imgURLTwo}
+            name="imgURLTwo"
             required
             onChange={handleChange}
-          />
-           <label>Detail: </label>
-          <textarea
-            className="textarea-detail"
-            rows={10}
-            cols={78}
-            placeholder='Detail'
-            value={product.detail}
-            name='detail'
+          />{" "}
+          <br />
+          <label>ImgURLThree: </label> <br />
+          <input
+            className="edit-imgURLThree"
+            placeholder="Image Link"
+            value={product.imgURLThree}
+            name="imgURLThree"
             required
             onChange={handleChange}
-          />
-          <button type='submit' className="save-button">Save</button>
-      </form>
+          />{" "}
+          <br />
+        </form>
       </div>
-      </Layout>
+      <div className="content-div-edit">
+        <form className="edit-form" onSubmit={handleSubmit}>
+          <label>Name: </label> <br />
+          <input
+            className="input-name-edit"
+            placeholder="Name"
+            value={product.name}
+            name="name"
+            required
+            autoFocus
+            onChange={handleChange}
+          />{" "}
+          <br />
+          <label>Price: </label> <br />
+          <input
+            className="input-price-edit"
+            placeholder="Price"
+            value={product.price}
+            name="price"
+            required
+            autoFocus
+            onChange={handleChange}
+          />{" "}
+          <br />
+          <label>Description: </label> <br />
+          <textarea
+            className="textarea-description-edit"
+            rows={10}
+            cols={78}
+            placeholder="Description"
+            value={product.description}
+            name="description"
+            required
+            onChange={handleChange}
+          />{" "}
+          <br />
+          <label>Detail: </label> <br />
+          <textarea
+            className="textarea-detail-edit"
+            rows={10}
+            cols={78}
+            placeholder="Detail"
+            value={product.detail}
+            name="detail"
+            required
+            onChange={handleChange}
+          />
+          <button type="submit" className="save-button">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 

@@ -7,7 +7,6 @@
 .edit-container {
   display: flex;
   justify-content: center;
-  /* max-width: 90%; */
   padding: 0 30px;
   margin: 0 auto;
 }
@@ -28,6 +27,7 @@
 .image-form,
 .info-form {
   margin: 20px;
+  padding-bottom: 30px;
 }
 
 .imgURLOne,
