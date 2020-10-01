@@ -41,6 +41,6 @@
 
 .ul-products{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0px;
 }
