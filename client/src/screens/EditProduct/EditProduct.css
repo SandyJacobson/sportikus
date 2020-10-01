@@ -1,0 +1,38 @@
+.product-edit {
+  display: flex;
+  justify-content: center;
+  /* max-width: 90%; */
+  padding: 0 30px;
+  margin: 20px auto;
+}
+
+.image-div-edit {
+  margin: 0px, 30px, 0px, 0px;
+}
+
+.edit-form {
+  margin-top: 18px;
+}
+
+.edit-imgURLOne,
+.edit-imgURLTwo,
+.edit-imgURLThree,
+.input-name-edit,
+.input-price-edit,
+.textarea-description-edit,
+.textarea-detail-edit {
+  background-color: #eef2f4;
+  border: 1px solid #a9a9a9;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 7px;
+  width: 355px;
+}
+
+@media only screen and (max-width: 760px) {
+  .product-edit {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    margin-top: 100px;
+  }
+}
