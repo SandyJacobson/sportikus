@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./ToggleImages.css";
-
 const ToggleImages = (props) => {
   const { product } = props;
   const [toggled, setToggled] = useState(false);
-
   return (
     <div className="images-container">
       <div className="big-image-container">
@@ -43,5 +41,4 @@ const ToggleImages = (props) => {
     </div>
   );
 };
-
 export default ToggleImages;
