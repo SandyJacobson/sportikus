@@ -21,7 +21,7 @@ const Products = (props) => {
         <div className="name-price-products">
           <ul key={idx} className="ul-products">
             <h5 className="font-products">{product.name}</h5>
-            <h5 className="font-products">${product.price}</h5>
+            <h5 className="font-products">{product.price}</h5>
           </ul>
         </div>
       </div>
