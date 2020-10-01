@@ -1,6 +1,8 @@
 import React from "react";
 import { useHistory } from 'react-router-dom'
 import { deleteProduct } from "../../services/products";
+import "./DeleteProduct.css";
+
 
 const DeleteProduct = (props) => {
   const history = useHistory()
@@ -15,7 +17,7 @@ const DeleteProduct = (props) => {
           history.push('/products')
         }}
       >
-        Delete
+        DELETE
       </button>
     </div>
   );

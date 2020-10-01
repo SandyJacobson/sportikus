@@ -1,12 +1,12 @@
 .product-details {
-display: flex;
-justify-content: center;
-padding: 0 30px;
-margin: 0 auto; 
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
+  margin: 0 auto;
 }
 
 .info-container {
-  width: 55%;
+  width: 30%;
 }
 
 .list {
@@ -36,6 +36,22 @@ hr {
 
 .review-header-contents {
   margin-left: 50px;
+}
+
+.edit-button {
+  background-color: rgba(57 119 243);
+  border: 0px;
+  margin-top: 20px;
+  padding: 10px 60px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 19px;
+  text-decoration: none;
+}
+
+.edit-link {
+  text-decoration: none;
+  color: white;
 }
 
 @media only screen and (max-width: 760px) {

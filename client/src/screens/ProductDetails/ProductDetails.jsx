@@ -36,7 +36,7 @@ const ProductDetails = (props) => {
         <div className="button-div">
           <button className="edit-button">
             <Link className="edit-link" to={`/products/${product._id}/edit`}>
-              Edit
+              EDIT
             </Link>
           </button>
           <DeleteProduct product={product} />
