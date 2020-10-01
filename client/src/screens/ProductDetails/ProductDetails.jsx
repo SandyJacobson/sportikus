@@ -1,14 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getProduct } from "../../services/products";
+import { getProduct, updateProduct } from "../../services/products";
 import DeleteProduct from "../../components/DeleteProduct/DeleteProduct";
 import ToggleImages from "../../components/ToggleImages/ToggleImages";
+import ReviewForm from "../../components/ReviewForm/ReviewForm";
+import Reviews from "../../components/Reviews/Reviews";
+// import StarRating from "star-rating-react";
 import "./ProductDetails.css";
 
-const ProductDetails = (props) => {
-  const [product, setProduct] = useState(null);
+const ProductDetails = () => {
+  const [product, setProduct] = useState({
+    name: "",
+    price: "",
+    imgURLOne: "",
+    imgURLTwo: "",
+    imgURLThree: "",
+    description: "",
+    detail: "",
+    reviews: [],
+  });
+  const [review, setReview] = useState({
+    author: "",
+    rating: "",
+    content: "",
+  });
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
+  const [toggled, setToggled] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -19,38 +37,75 @@ const ProductDetails = (props) => {
     fetchProduct();
   }, [id]);
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setReview({
+      ...review,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    product.reviews.push(review);
+    setProduct(product);
+    await updateProduct(id, product);
+  };
+
   if (!isLoaded) {
     return <h1>... Not Loading</h1>;
   }
 
+  const toggleReview = () => setToggled(!toggled);
+
   return (
     <div className="product-details">
-      <ToggleImages product={product}/>
+      <ToggleImages product={product} />
       <div className="info-container">
         <ul className="info-list">
           <li className="list list-name">{product.name}</li>
-          <li className="list list-price">${product.price}</li>
+          <li className="list list-price">{product.price}</li>
           <li className="list">{product.description}</li>
           <li className="list">Shown: {product.detail}</li>
         </ul>
         <div className="button-div">
           <button className="edit-button">
             <Link className="edit-link" to={`/products/${product._id}/edit`}>
-              Edit
+              EDIT
             </Link>
           </button>
           <DeleteProduct product={product} />
         </div>
         <hr />
-        <div className="review-header-contents">
-          <h3 className="review-header">Reviews</h3>
+        <div className="review-container">
+          <div className="review-header">
+          <h3 className="review-header-title" onClick={toggleReview}>+ Reviews</h3>
+          </div>
+          {/* <div className="review-star-rating">
+            <StarRating
+              size={product.rating}
+              value={product.rating}
+              onChange={function (val) {
+                console.log(val);
+              }}
+            />
+          </div> */}
         </div>
-        <ul className="review-list">
-          <li className="list review-title">Title</li>
-          <li className="list review-description">Content</li>
-          <li className="list review-post-date">Date Posted</li>
-          <li className="list more-reviews"><a href="#more">More Reviews</a></li>
-        </ul>
+        {toggled &&
+          <div className="review-content">
+            <Reviews reviews={product.reviews} />
+            <ReviewForm
+              title={review.title}
+              author={review.author}
+              rating={review.rating}
+              date={review.date}
+              location={review.location}
+              content={review.content}
+              onSubmit={handleSubmit}
+              onChange={handleChange}
+            />
+          </div>
+        }
       </div>
     </div>
   );
