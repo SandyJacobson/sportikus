@@ -45,7 +45,6 @@ const EditProduct = (props) => {
   }
 
   return (
-    <Layout user={props.user}>
     <div className="product-edit">
            <form onSubmit={handleSubmit}>
            <label>ImgURLOne: </label>
@@ -122,7 +121,6 @@ const EditProduct = (props) => {
           <button type='submit' className="save-button">Save</button>
       </form>
       </div>
-      </Layout>
   );
 };
 

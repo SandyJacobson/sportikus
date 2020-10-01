@@ -36,7 +36,7 @@ const Admin = () => {
 
   return (
     <div className="title-edit-container">
-      <h2 className="title">Edit Product</h2>
+      <h2 className="title">Create Product</h2>
       <div className="edit-container">
         <form className="image-form" onSubmit={handleSubmit}>
           <label className="label">ImgURLOne: </label>
