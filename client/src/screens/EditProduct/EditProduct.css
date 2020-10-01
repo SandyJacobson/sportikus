@@ -1,7 +1,6 @@
 .product-edit {
   display: flex;
   justify-content: center;
-  /* max-width: 90%; */
   padding: 0 30px;
   margin: 20px auto;
 }
