@@ -10,7 +10,7 @@
   max-width: 80%;
   display: flex;
   flex-direction: row;
-  margin: 0px 0px 40px 130px;
+  margin: 0px 0px 40px 23px;
   padding: 20px 0;
 }
 
@@ -22,7 +22,7 @@
   padding: 50px 90px;
   background-color: rgba(33, 120, 250, 0.671);
   top: 100px;
-  left: 27%
+  left: 330px;
 }
 
 .discount {
