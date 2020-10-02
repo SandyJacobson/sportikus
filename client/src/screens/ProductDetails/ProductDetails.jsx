@@ -5,7 +5,6 @@ import DeleteProduct from "../../components/DeleteProduct/DeleteProduct";
 import ToggleImages from "../../components/ToggleImages/ToggleImages";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
 import Reviews from "../../components/Reviews/Reviews";
-// import StarRating from "star-rating-react";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
@@ -81,15 +80,6 @@ const ProductDetails = () => {
           <div className="review-header">
           <h3 className="review-header-title" onClick={toggleReview}>+ Reviews</h3>
           </div>
-          {/* <div className="review-star-rating">
-            <StarRating
-              size={product.rating}
-              value={product.rating}
-              onChange={function (val) {
-                console.log(val);
-              }}
-            />
-          </div> */}
         </div>
         {toggled &&
           <div className="review-content">
