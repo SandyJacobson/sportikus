@@ -1,0 +1,26 @@
+.review-input-title,
+.review-input-author,
+.review-input-rating,
+.review-input-date,
+.review-input-location,
+.review-textarea-content {
+  background-color: #eef2f4;
+  border: 1px solid #a9a9a9;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 7px;
+  width: 100%;
+}
+
+.review-submit-button {
+  color: white;
+  background-color: rgba(57 119 243);
+  border: 0px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 60px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 19px;
+  text-decoration: none;
+}

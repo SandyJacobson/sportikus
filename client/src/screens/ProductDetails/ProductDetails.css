@@ -6,8 +6,7 @@
 }
 
 .info-container {
-  width: 30%;
-  padding: 0px 0px 30px 0px;
+  width: 35%;
 }
 
 .list {
@@ -33,10 +32,23 @@
 
 hr {
   margin-left: 50px;
+  width: 345px;
 }
 
-.review-header-contents {
+.review-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.review-header-contents,
+.review-container,
+.review-content {
   margin-left: 50px;
+}
+
+.review-star-rating {
+  padding: 14px;
 }
 
 .edit-button {

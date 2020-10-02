@@ -1,0 +1,19 @@
+.review-comp-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.review-comp-content {
+  font-size: 14px;
+  color: black;
+}
+
+.review-comp-dal {
+  font-size: 14px;
+  color: gray;
+}
+
+.product-review-header {
+  display: flex;
+  justify-content: space-between;
+}
